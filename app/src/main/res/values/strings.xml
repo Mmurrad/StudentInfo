@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Student Info</string>
+    <string-array name="year">
+        <item>1st year</item>
+        <item>2nd year</item>
+        <item>3rd year</item>
+        <item>4th year</item>
+    </string-array>
+    <string-array name="semister">
+        <item>1st term</item>
+        <item>2nd term</item>
+    </string-array>
+</resources>

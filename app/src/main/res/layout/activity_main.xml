@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/home_background"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        android:text="Notice board"
+        android:textSize="20sp"
+        android:id="@+id/notice_board_id"
+        android:textColor="#ffffff"
+        android:textStyle="bold|italic"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        android:text="Teacher"
+        android:textSize="20sp"
+        android:id="@+id/teacher_id"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        android:text="Student"
+        android:textSize="20sp"
+        android:id="@+id/student_id"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button"
+        android:padding="15dp"
+        android:text="parents"
+        android:textSize="20sp"
+        android:id="@+id/parents_id"
+        android:textColor="#ffffff"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

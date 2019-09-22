@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/home_background"
+    tools:context=".Add_Details_Of_Courses_Activity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Teacher name"
+        android:id="@+id/teacher_name_id"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Course title"
+        android:id="@+id/course_title_id"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textSize="18sp"
+            />
+        <Spinner
+            android:layout_marginLeft="5dp"
+            android:textAlignment="center"
+            android:id="@+id/year_spinner_id"
+            android:entries="@array/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semister"
+            android:textSize="18sp"
+            />
+        <Spinner
+            android:layout_marginLeft="5dp"
+            android:textAlignment="center"
+            android:id="@+id/semister_spinner_id"
+            android:layout_width="wrap_content"
+            android:entries="@array/semister"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Reference Book"
+        android:id="@+id/reference_book_id"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Writter name"
+        android:id="@+id/writter_name_id"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:text="save data"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/save_data_id"
+        />
+</LinearLayout>
