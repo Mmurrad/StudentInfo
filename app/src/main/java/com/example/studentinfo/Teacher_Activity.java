@@ -48,5 +48,13 @@ public class Teacher_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        take_attendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Teacher_Activity.this,Semister_name_Activity.class);
+                intent.putExtra("key","take_attendance");
+                startActivity(intent);
+            }
+        });
     }
 }
