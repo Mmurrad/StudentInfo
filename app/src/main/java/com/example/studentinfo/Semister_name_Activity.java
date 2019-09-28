@@ -1,6 +1,7 @@
 package com.example.studentinfo;
 
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -171,5 +172,15 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
                 startActivity(intent);
             }
         }
+        if(passkey.equals("take_attendance"))
+        {
+            if(view.getId()==R.id.first_semister_id)
+            {
+                Intent intent=new Intent(Semister_name_Activity.this,PresentDatePicker_Activity.class);
+                startActivity(intent);
+            }
+        }
     }
+
+
 }

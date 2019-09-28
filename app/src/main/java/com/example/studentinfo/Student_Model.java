@@ -18,7 +18,12 @@ public class Student_Model {
 
     }
 
-    public Student_Model(String name,String roll, String school_name, String college_name, String home_town, String birthday, String phone, String email,String year,String semister, String image) {
+    public Student_Model(String name, String roll) {
+        this.name = name;
+        this.roll = roll;
+    }
+
+    public Student_Model(String name, String roll, String school_name, String college_name, String home_town, String birthday, String phone, String email, String year, String semister, String image) {
         this.name = name;
         this.roll=roll;
         this.school_name = school_name;

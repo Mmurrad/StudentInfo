@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Show_student_details_recyclerview"></activity>
+        <activity android:name=".PresentDatePicker_Activity"></activity>
+        <activity android:name=".Show_student_details_recyclerview" />
         <activity android:name=".Student_enroll_add_data_Activity" />
         <activity android:name=".Enroll_Student_add_delete_Activity" />
         <activity android:name=".Semister_name_Activity" />

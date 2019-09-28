@@ -268,7 +268,6 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
 
     private void deletepdf(String name) {
         DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("CourseDetails").child(name);
-
         databaseReference.removeValue();
     }
 
