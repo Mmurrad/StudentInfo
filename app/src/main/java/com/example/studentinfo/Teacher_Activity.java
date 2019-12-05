@@ -56,5 +56,13 @@ public class Teacher_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        show_percentage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Teacher_Activity.this,Semister_name_Activity.class);
+                intent.putExtra("key","show_percentage");
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="10dp"
+    android:orientation="vertical"
     android:background="@drawable/home_background"
-    tools:context=".PresentDatePicker_Activity">
+    tools:context=".ShowPercentageStudentList">
 
     <ListView
-        android:id="@+id/datepickerlistview"
+        android:id="@+id/showpercentagelistview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#3F51B5"

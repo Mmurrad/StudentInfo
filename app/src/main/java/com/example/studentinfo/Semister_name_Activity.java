@@ -174,13 +174,55 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
         }
         if(passkey.equals("take_attendance"))
         {
+            Intent intent=new Intent(Semister_name_Activity.this,PresentDatePicker_Activity.class);
             if(view.getId()==R.id.first_semister_id)
             {
-                Intent intent=new Intent(Semister_name_Activity.this,PresentDatePicker_Activity.class);
+                intent.putExtra("term","first");
                 startActivity(intent);
             }
+            else if(view.getId()==R.id.second_semister_id)
+            {
+                intent.putExtra("term","second");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.third_semister_id)
+            {
+                intent.putExtra("term","third");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fourth_semister_id)
+            {
+                intent.putExtra("term","fourth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fifth_semister_id)
+            {
+                intent.putExtra("term","five");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.six_semister_id)
+            {
+                intent.putExtra("term","six");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.seven_semister_id)
+            {
+                intent.putExtra("term","seven");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.eight_semister_id)
+            {
+                intent.putExtra("term","eight");
+                startActivity(intent);
+            }
+
+        }
+        if(passkey.equals("show_percentage"))
+        {
+            Intent intent=new Intent(Semister_name_Activity.this,ShowPercentageStudentList.class);
+            intent.putExtra("term","first");
+            startActivity(intent);
         }
     }
-
 
 }
