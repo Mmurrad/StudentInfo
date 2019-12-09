@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Toast;
 
 public class Semister_name_Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,6 +41,51 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
     public void onClick(View view) {
         final Bundle bundle=getIntent().getExtras();
         final String passkey=bundle.getString("key");
+
+        if(passkey.equals("show_course"))
+        {
+            if(view.getId()==R.id.first_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","first");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.second_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","second");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.third_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","third");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fourth_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","fourth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fifth_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","fifth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.six_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","six");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.seven_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","seven");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.eight_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,ShowCourseDetails_Activity.class);
+                intent.putExtra("term","eight");
+                startActivity(intent);
+            }
+        }
+
 
         if(passkey.equals("enroll_course")){
             if(view.getId()==R.id.first_semister_id){
@@ -220,8 +266,46 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
         if(passkey.equals("show_percentage"))
         {
             Intent intent=new Intent(Semister_name_Activity.this,ShowPercentageStudentList.class);
-            intent.putExtra("term","first");
-            startActivity(intent);
+            if(view.getId()==R.id.first_semister_id)
+            {
+                intent.putExtra("term","first");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.second_semister_id)
+            {
+                intent.putExtra("term","second");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.third_semister_id)
+            {
+                intent.putExtra("term","third");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fourth_semister_id)
+            {
+                intent.putExtra("term","fourth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fifth_semister_id)
+            {
+                intent.putExtra("term","fifth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.six_semister_id)
+            {
+                intent.putExtra("term","six");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.seven_semister_id)
+            {
+                intent.putExtra("term","seven");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.eight_semister_id)
+            {
+                intent.putExtra("term","eight");
+                startActivity(intent);
+            }
         }
     }
 

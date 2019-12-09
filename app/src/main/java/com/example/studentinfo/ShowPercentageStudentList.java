@@ -26,7 +26,7 @@ public class ShowPercentageStudentList extends AppCompatActivity {
     DatabaseReference databaseReference,databaseReference1;
     Student_Model student_model;
     PresentClass presentClass;
-    private List<Student_Model> list;
+    private List<Student_Model> list1_1,list1_2,list2_1,list2_2,list3_1,list3_2,list4_1,list4_2;
     String passvalue;
 
     @Override
@@ -36,26 +36,183 @@ public class ShowPercentageStudentList extends AppCompatActivity {
         listView=findViewById(R.id.showpercentagelistview);
         databaseReference= FirebaseDatabase.getInstance().getReference("Student_Details");
         databaseReference1= FirebaseDatabase.getInstance().getReference("Present");
-        list=new ArrayList<>();
+
+        list1_1=new ArrayList<>();
+        list1_2=new ArrayList<>();
+        list2_1=new ArrayList<>();
+        list2_2=new ArrayList<>();
+        list3_1=new ArrayList<>();
+        list3_2=new ArrayList<>();
+        list4_1=new ArrayList<>();
+        list4_2=new ArrayList<>();
+
+
         final Bundle bundle=getIntent().getExtras();
         passvalue=bundle.getString("term");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                {
-                    try{
-                        student_model=dataSnapshot1.getValue(Student_Model.class);
-                        if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("1st term")){
-                            list.add(student_model);
-                        }
-                    }catch (Exception e)
-                    {
 
+                list1_1.clear();
+                list1_2.clear();
+                list2_1.clear();
+                list2_2.clear();
+                list3_1.clear();
+                list3_2.clear();
+                list4_1.clear();
+                list4_2.clear();
+
+                if(passvalue.equals("first"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("1st term")){
+                                list1_1.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
                     }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list1_1);
+                    listView.setAdapter(attendanceAdapter);
                 }
-                AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list);
-                listView.setAdapter(attendanceAdapter);
+
+
+                else if(passvalue.equals("second"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                list1_2.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list1_2);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("third"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("2nd year")&&student_model.getSemister().equals("1st term")){
+                                list2_1.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list2_1);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("fourth"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("2nd year")&&student_model.getSemister().equals("2nd term")){
+                                list2_2.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list2_2);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("fifth"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("3rd year")&&student_model.getSemister().equals("1st term")){
+                                list3_1.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list3_1);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("six"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("3rd year")&&student_model.getSemister().equals("2nd term")){
+                                list3_2.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list3_2);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("seven"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("4th year")&&student_model.getSemister().equals("1st term")){
+                                list4_1.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list4_1);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
+
+                else if(passvalue.equals("eight"))
+                {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        try{
+                            student_model=dataSnapshot1.getValue(Student_Model.class);
+                            if(student_model.getYear().equals("4th year")&&student_model.getSemister().equals("2nd term")){
+                                list4_2.add(student_model);
+                            }
+                        }catch (Exception e)
+                        {
+
+                        }
+                    }
+                    AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list4_2);
+                    listView.setAdapter(attendanceAdapter);
+                }
+
 
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -75,27 +232,6 @@ public class ShowPercentageStudentList extends AppCompatActivity {
                         AlertDialog alertDialog=alertdialogbuilder.create();
                         alertDialog.show();
 
-                        databaseReference1.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                {
-                                    try{
-                                         presentClass=dataSnapshot1.getValue(PresentClass.class);
-                                         
-
-                                    }catch (Exception e)
-                                    {
-
-                                    }
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
                     }
                 });
             }

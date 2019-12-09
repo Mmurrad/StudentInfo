@@ -20,6 +20,7 @@ public class CourseDetails_Activity extends AppCompatActivity {
         show_details=findViewById(R.id.show_data_id);
         final Bundle bundle=getIntent().getExtras();
         final String passvalue=bundle.getString("term");
+
             add_details.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -73,5 +74,6 @@ public class CourseDetails_Activity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
     }
 }
