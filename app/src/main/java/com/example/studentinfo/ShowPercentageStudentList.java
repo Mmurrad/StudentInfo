@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +28,7 @@ public class ShowPercentageStudentList extends AppCompatActivity {
     Student_Model student_model;
     PresentClass presentClass;
     private List<Student_Model> list1_1,list1_2,list2_1,list2_2,list3_1,list3_2,list4_1,list4_2;
+    private List<PresentClass> presentClasses4_2;
     String passvalue;
 
     @Override
@@ -36,6 +38,7 @@ public class ShowPercentageStudentList extends AppCompatActivity {
         listView=findViewById(R.id.showpercentagelistview);
         databaseReference= FirebaseDatabase.getInstance().getReference("Student_Details");
         databaseReference1= FirebaseDatabase.getInstance().getReference("Present");
+        presentClass=new PresentClass(PresentClass.class);
 
         list1_1=new ArrayList<>();
         list1_2=new ArrayList<>();
@@ -45,6 +48,7 @@ public class ShowPercentageStudentList extends AppCompatActivity {
         list3_2=new ArrayList<>();
         list4_1=new ArrayList<>();
         list4_2=new ArrayList<>();
+        presentClasses4_2=new ArrayList<>();
 
 
         final Bundle bundle=getIntent().getExtras();
@@ -211,29 +215,34 @@ public class ShowPercentageStudentList extends AppCompatActivity {
                     }
                     AttendanceAdapter attendanceAdapter=new AttendanceAdapter(ShowPercentageStudentList.this,list4_2);
                     listView.setAdapter(attendanceAdapter);
+
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(ShowPercentageStudentList.this);
+                            alertdialogbuilder.setTitle("Class Attendance");
+                            LayoutInflater layoutInflater=getLayoutInflater();
+                            final View view1=layoutInflater.inflate(R.layout.class_attendance_details,null);
+                            final EditText totalclass=view1.findViewById(R.id.totalclassid);
+                            final TextView present=view1.findViewById(R.id.presentclassid);
+                            final TextView absent=view1.findViewById(R.id.absentclassid);
+                            final EditText valid=view1.findViewById(R.id.valid_or_invalid_id);
+
+                            try{
+                                Toast.makeText(getApplicationContext()," "+presentClasses4_2.get(i).getPresent(),Toast.LENGTH_LONG).show();
+                            }catch (Exception e)
+                            {
+                                Toast.makeText(getApplicationContext(),""+e,Toast.LENGTH_LONG).show();
+                            }
+                            alertdialogbuilder.setView(view1);
+                            AlertDialog alertDialog=alertdialogbuilder.create();
+                            alertDialog.show();
+
+                        }
+                    });
+
                 }
-
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(ShowPercentageStudentList.this);
-                        alertdialogbuilder.setTitle("Class Attendance");
-                        LayoutInflater layoutInflater=getLayoutInflater();
-                        final View view1=layoutInflater.inflate(R.layout.class_attendance_details,null);
-                        final EditText totalclass=view1.findViewById(R.id.totalclassid);
-                        final EditText present=view1.findViewById(R.id.presentclassid);
-                        final TextView absent=view1.findViewById(R.id.absentclassid);
-                        final TextView valid=view1.findViewById(R.id.valid_or_invalid_id);
-
-
-
-                        alertdialogbuilder.setView(view1);
-                        AlertDialog alertDialog=alertdialogbuilder.create();
-                        alertDialog.show();
-
-                    }
-                });
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -43,5 +43,13 @@ public class Student_HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        result.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Student_HomePage.this,Semister_name_Activity.class);
+                intent.putExtra("key","parent_show_result");
+                startActivity(intent);
+            }
+        });
     }
 }

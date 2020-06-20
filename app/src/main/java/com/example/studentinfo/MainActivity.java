@@ -25,20 +25,37 @@ public class MainActivity extends AppCompatActivity {
         teacher=findViewById(R.id.teacher_id);
         students=findViewById(R.id.student_id);
         parents=findViewById(R.id.parents_id);
+        Bundle bundle=getIntent().getExtras();
+        final String passkey=bundle.getString("passkey");
 
         notice_board.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this,Notice_board_Activity.class);
-                startActivity(intent);
+                if(passkey.equals("admin"))
+                {
+                    Intent intent=new Intent(MainActivity.this,Notice_board_Activity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent=new Intent(MainActivity.this,ListOfPdf_Activity.class);
+                    intent.putExtra("key","showdata");
+                    startActivity(intent);
+                }
+
             }
         });
         teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent=new Intent(MainActivity.this,Teacher_Activity.class);
-                    startActivity(intent);
+                    if(passkey.equals("admin"))
+                    {
+                        Intent intent=new Intent(MainActivity.this,Teacher_Activity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(),"You Are Not Admin.",Toast.LENGTH_LONG).show();
+                    }
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext()," "+e,Toast.LENGTH_LONG).show();
                 }
@@ -64,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 final TextView yes=view1.findViewById(R.id.yes_id);
 
                 builder.setTitle("Are You Guardian ?");
-                AlertDialog alertDialog=builder.create();
+                final AlertDialog alertDialog=builder.create();
 
                 alertDialog.show();
 
@@ -73,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Intent intent=new Intent(MainActivity.this,ParentsHomePage.class);
                         startActivity(intent);
+                        alertDialog.dismiss();
+                    }
+                });
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
                     }
                 });
             }

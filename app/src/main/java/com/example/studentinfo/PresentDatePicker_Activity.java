@@ -133,7 +133,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("2nd year")&&student_model.getSemister().equals("1st term")){
                                     list2_1.add(student_model);
                                 }
                             }catch (Exception e)
@@ -151,7 +151,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("2nd year")&&student_model.getSemister().equals("2nd term")){
                                     list2_2.add(student_model);
                                 }
                             }catch (Exception e)
@@ -169,7 +169,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("3rd year")&&student_model.getSemister().equals("1st term")){
                                     list3_1.add(student_model);
                                 }
                             }catch (Exception e)
@@ -187,7 +187,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("3rd year")&&student_model.getSemister().equals("2nd term")){
                                     list3_2.add(student_model);
                                 }
                             }catch (Exception e)
@@ -205,7 +205,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("4th year")&&student_model.getSemister().equals("1st term")){
                                     list4_1.add(student_model);
                                 }
                             }catch (Exception e)
@@ -223,7 +223,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                         {
                             try{
                                 student_model=dataSnapshot1.getValue(Student_Model.class);
-                                if(student_model.getYear().equals("1st year")&&student_model.getSemister().equals("2nd term")){
+                                if(student_model.getYear().equals("4th year")&&student_model.getSemister().equals("2nd term")){
                                     list4_2.add(student_model);
                                 }
                             }catch (Exception e)
@@ -237,7 +237,8 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
 
 
                     presentcount=0;
-                    final PresentClass presentClass=new PresentClass(presentcount);
+                    absentcount=0;
+                   // final PresentClass presentClass=new PresentClass(presentcount);
 
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -262,8 +263,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -275,7 +274,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                             }
 
                                             alertDialog.dismiss();
-                                            count=presentcount++;
                                         }
                                     });
                                     absent.setOnClickListener(new View.OnClickListener() {
@@ -285,13 +283,13 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                             {
                                                 if(student_model.getName().equals(itemname))
                                                 {
-                                                    PresentClass presentClass1=new PresentClass(count1);
-                                                    databaseReference3.child(itemname).setValue(presentClass1);
+                                                    PresentClass presentClass1=new PresentClass(count);
+                                                    databaseReference2.child(itemname).setValue(presentClass1);
                                                 }
                                             }
                                             else {
                                                 PresentClass presentClass1=new PresentClass(count);
-                                                databaseReference3.child(itemname).setValue(presentClass1.getPresent()+1);
+                                                databaseReference2.child(itemname).setValue(presentClass1.getPresent()+1);
                                             }
                                             alertDialog.dismiss();
                                             count1=absentcount++;
@@ -313,8 +311,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
+
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -364,8 +361,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -415,8 +410,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -466,8 +459,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -518,8 +509,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
+
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -569,8 +559,7 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
+
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);
@@ -620,8 +609,6 @@ public class PresentDatePicker_Activity extends AppCompatActivity implements Dat
                                         public void onClick(View view) {
                                             if(presentcount==0)
                                             {
-                                                //count=presentcount++;
-                                                //AttendanceAdapter attendanceAdapter  = new AttendanceAdapter(PresentDatePicker_Activity.this, (List<Student_Model>) student_model);
                                                 if(student_model.getName().equals(itemname)){
                                                     PresentClass presentClass1=new PresentClass(count);
                                                     databaseReference2.child(itemname).setValue(presentClass1);

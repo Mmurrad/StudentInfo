@@ -37,6 +37,7 @@ public class Show_student_details_recyclerview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_show_student_details_recyclerview);
         recyclerView=findViewById(R.id.recyclerviewid);
         recyclerView.setHasFixedSize(true);

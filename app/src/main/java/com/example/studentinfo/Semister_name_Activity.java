@@ -130,50 +130,119 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
             }
         }
 
+
+
         if(passkey.equals("enroll_students"))
         {
 
             if(view.getId()==R.id.first_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","first");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.second_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","second");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.third_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","third");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.fourth_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","fourth");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.fifth_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","fifth");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.six_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","six");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.seven_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","seven");
                 startActivity(intent);
             }
             else if(view.getId()==R.id.eight_semister_id){
                 Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","enroll_s");
                 intent.putExtra("term","eight");
                 startActivity(intent);
             }
         }
+
+
+
+        if(passkey.equals("show_result"))
+        {
+
+            if(view.getId()==R.id.first_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","first");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.second_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","second");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.third_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","third");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fourth_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","fourth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fifth_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","fifth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.six_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","six");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.seven_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","seven");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.eight_semister_id){
+                Intent intent=new Intent(Semister_name_Activity.this,Enroll_Student_add_delete_Activity.class);
+                intent.putExtra("student","result");
+                intent.putExtra("term","eight");
+                startActivity(intent);
+            }
+        }
+
+
+
+
         if (passkey.equals("student_details"))
         {
             Intent intent=new Intent(Semister_name_Activity.this,Show_student_details_recyclerview.class);
@@ -218,6 +287,11 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
                 startActivity(intent);
             }
         }
+
+
+
+
+
         if(passkey.equals("take_attendance"))
         {
             Intent intent=new Intent(Semister_name_Activity.this,PresentDatePicker_Activity.class);
@@ -263,6 +337,7 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
             }
 
         }
+
         if(passkey.equals("show_percentage"))
         {
             Intent intent=new Intent(Semister_name_Activity.this,ShowPercentageStudentList.class);
@@ -304,6 +379,52 @@ public class Semister_name_Activity extends AppCompatActivity implements View.On
             else if(view.getId()==R.id.eight_semister_id)
             {
                 intent.putExtra("term","eight");
+                startActivity(intent);
+            }
+        }
+
+
+        if(passkey.equals("parent_show_result"))
+        {
+            Intent intent=new Intent(Semister_name_Activity.this,ShowResultActivity.class);
+            if(view.getId()==R.id.first_semister_id)
+            {
+                intent.putExtra("result","first");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.second_semister_id)
+            {
+                intent.putExtra("result","second");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.third_semister_id)
+            {
+                intent.putExtra("result","third");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fourth_semister_id)
+            {
+                intent.putExtra("result","fourth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.fifth_semister_id)
+            {
+                intent.putExtra("result","fifth");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.six_semister_id)
+            {
+                intent.putExtra("result","six");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.seven_semister_id)
+            {
+                intent.putExtra("result","seven");
+                startActivity(intent);
+            }
+            else if(view.getId()==R.id.eight_semister_id)
+            {
+                intent.putExtra("result","eight");
                 startActivity(intent);
             }
         }

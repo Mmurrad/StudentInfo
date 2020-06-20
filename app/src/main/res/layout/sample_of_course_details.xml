@@ -8,38 +8,38 @@
 
 <LinearLayout
     android:orientation="horizontal"
-    android:layout_marginTop="2dp"
+    android:layout_marginTop="4dp"
     android:layout_width="match_parent"
     android:layout_height="30dp"
-    android:weightSum="2"
+    android:weightSum="3"
     >
     <TextView
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:text="Teacher Name : "
-        android:textSize="17sp"
+        android:layout_height="wrap_content"
+        android:text="Teacher Name :"
+        android:textSize="15sp"
         android:id="@+id/hint_teacher_name"
         android:layout_weight="1"
         />
     <TextView
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:textSize="17sp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:id="@+id/teacher_name"
-        android:layout_weight="1"
+        android:layout_weight="2"
         />
 </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:weightSum="2"
+        android:weightSum="3"
         >
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Course Title : "
             android:textSize="15sp"
             android:id="@+id/hint_course_name"
@@ -47,24 +47,24 @@
             />
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/course_name"
-            android:layout_weight="1"
+            android:layout_weight="2"
             />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:weightSum="2"
+        android:weightSum="3"
         >
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Book Name : "
             android:textSize="13sp"
             android:id="@+id/hint_book_name"
@@ -72,24 +72,24 @@
             />
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/book_name"
-            android:layout_weight="1"
+            android:layout_weight="2"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:weightSum="2"
+        android:weightSum="3"
         >
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Writter Name : "
             android:textSize="13sp"
             android:id="@+id/hint_writter_name"
@@ -97,25 +97,25 @@
             />
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/writter_name"
-            android:layout_weight="1"
+            android:layout_weight="2"
             />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:weightSum="2"
+        android:weightSum="3"
         >
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/year_id"
@@ -123,11 +123,11 @@
             />
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/semister_id"
-            android:layout_weight="1"
+            android:layout_weight="2"
             />
     </LinearLayout>
 </LinearLayout>

@@ -117,4 +117,11 @@
             android:layout_alignParentRight="true" />
 
     </LinearLayout>
+    <ProgressBar
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:id="@+id/login_proressbar_id"
+        android:visibility="gone"
+        />
 </LinearLayout>

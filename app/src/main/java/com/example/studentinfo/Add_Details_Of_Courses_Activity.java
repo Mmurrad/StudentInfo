@@ -36,7 +36,13 @@ public class Add_Details_Of_Courses_Activity extends AppCompatActivity {
         save_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                savecoursedetails();
+                try{
+                    savecoursedetails();
+                }catch (Exception e)
+                {
+                    Toast.makeText(getApplicationContext()," "+e,Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }
@@ -67,9 +73,15 @@ public class Add_Details_Of_Courses_Activity extends AppCompatActivity {
         }
 
         else {
-            AddCourseDetails addCourseDetails=new AddCourseDetails(teacher,title,book,writter,year_name,term);
-            databaseReference.child(teacher).setValue(addCourseDetails);
-            Toast.makeText(getApplicationContext(),"Data is added succesfully",Toast.LENGTH_SHORT).show();
+            try{
+                AddCourseDetails addCourseDetails=new AddCourseDetails(teacher,title,book,writter,year_name,term);
+                databaseReference.child(teacher).setValue(addCourseDetails);
+                Toast.makeText(getApplicationContext(),"Data is added succesfully",Toast.LENGTH_SHORT).show();
+            }catch (Exception e)
+            {
+                Toast.makeText(getApplicationContext()," "+e,Toast.LENGTH_LONG).show();
+            }
+
         }
 
     }

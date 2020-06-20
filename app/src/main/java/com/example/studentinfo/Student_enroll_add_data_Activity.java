@@ -29,7 +29,7 @@ import com.squareup.picasso.Picasso;
 public class Student_enroll_add_data_Activity extends AppCompatActivity {
 
     private ImageView imageView;
-    private Button choosebutton,savedatabutton;
+    private Button choosebutton,savebutton;
     private EditText name,roll,school_name,college_name,home_town,birthday,mobile,email;
     private Spinner year,semister;
     private Uri  imageuri;
@@ -48,7 +48,7 @@ public class Student_enroll_add_data_Activity extends AppCompatActivity {
         semister=findViewById(R.id.semister_id);
         imageView=findViewById(R.id.imageview_id);
         choosebutton=findViewById(R.id.choose_button_id);
-        savedatabutton=findViewById(R.id.save_student_data_id);
+        savebutton=(Button)findViewById(R.id.save_student_data_id);
         name=findViewById(R.id.student_name_id);
         roll=findViewById(R.id.student_roll_id);
         school_name=findViewById(R.id.school_name_id);
@@ -67,7 +67,8 @@ public class Student_enroll_add_data_Activity extends AppCompatActivity {
                 opnenfilechooser();
             }
         });
-        savedatabutton.setOnClickListener(new View.OnClickListener() {
+
+        savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(storageTask!=null && storageTask.isInProgress())
@@ -75,12 +76,11 @@ public class Student_enroll_add_data_Activity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Uploading in progress",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    savedata();
+                    saveinformation();
                 }
 
             }
         });
-
     }
 
     public String getFileExtention(Uri imageuri)
@@ -90,7 +90,7 @@ public class Student_enroll_add_data_Activity extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(imageuri));
     }
 
-    private void savedata() {
+    private void saveinformation() {
         final String student_name=name.getText().toString().trim();
         final String student_roll=roll.getText().toString().trim();
         final String schoolname=school_name.getText().toString().trim();
@@ -107,7 +107,7 @@ public class Student_enroll_add_data_Activity extends AppCompatActivity {
             name.requestFocus();
             return;
         }
-        StorageReference reference=storageReference.child(System.currentTimeMillis()+"."+getFileExtention(imageuri));
+       StorageReference reference=storageReference.child(System.currentTimeMillis()+"."+getFileExtention(imageuri));
 
         reference.putFile(imageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override

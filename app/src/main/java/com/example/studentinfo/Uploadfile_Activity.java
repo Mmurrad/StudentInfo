@@ -42,6 +42,8 @@ public class Uploadfile_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uploadfile_);
+
+
         upload_button=findViewById(R.id.uploadfile_id);
         filename=findViewById(R.id.filename_id);
         storageReference=FirebaseStorage.getInstance().getReference();

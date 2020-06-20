@@ -40,7 +40,7 @@
             android:text="Present : "
             android:textStyle="bold"
             />
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
             android:text="Absent : "
             android:textStyle="bold"
             />
-        <EditText
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"

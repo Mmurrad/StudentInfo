@@ -82,7 +82,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -103,7 +103,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -124,7 +124,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                          //  deleteData();
                         }
                     });
                 }
@@ -145,7 +145,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -166,7 +166,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -187,7 +187,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -208,7 +208,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }
@@ -229,7 +229,7 @@ public class ShowCourseDetails_Activity extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                            deleteData();
+                           // deleteData();
                         }
                     });
                 }

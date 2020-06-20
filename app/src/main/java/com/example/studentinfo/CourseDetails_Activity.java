@@ -15,8 +15,8 @@ public class CourseDetails_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_course_details_);
 
         add_details=findViewById(R.id.add_details_id);
-        update_details=findViewById(R.id.update_data_id);
-        delete_details=findViewById(R.id.delete_data_id);
+        //update_details=findViewById(R.id.update_data_id);
+        //delete_details=findViewById(R.id.delete_data_id);
         show_details=findViewById(R.id.show_data_id);
         final Bundle bundle=getIntent().getExtras();
         final String passvalue=bundle.getString("term");
@@ -64,14 +64,6 @@ public class CourseDetails_Activity extends AppCompatActivity {
                         intent.putExtra("term","eight");
                         startActivity(intent);
                     }
-                }
-            });
-            delete_details.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(CourseDetails_Activity.this,ShowCourseDetails_Activity.class);
-                    intent.putExtra("term","delete");
-                    startActivity(intent);
                 }
             });
 
